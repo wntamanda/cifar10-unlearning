@@ -1,0 +1,27 @@
+# data & artifacts
+/data/
+*.pt
+*.pth
+__pycache__/
+*.pyc
+
+# notebooks & cache
+.ipynb_checkpoints/
+*.tsv
+*.csv
+
+# envs
+.env
+.venv/
+venv/
+.env.*
+
+# os/editor junk
+.DS_Store
+.vscode/
+.idea/
+
+# package managers
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*

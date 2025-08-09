@@ -1,0 +1,14 @@
+{
+    "seed": 1337,
+    "batch_size": 64,
+    "lr": 0.001,
+    "epochs": 5,
+    "base_classes": [2, 3, 5, 9],
+    "forget_class": 0,
+    "per_base": 1000,
+    "forget_n": 1000,
+    "dataset": "CIFAR10",
+    "normalize_mean": [0.5, 0.5, 0.5],
+    "normalize_std": [0.5, 0.5, 0.5]
+  }
+  
