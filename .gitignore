@@ -1,20 +1,38 @@
 # data & artifacts
 /data/
+
+# model checkpoints
 *.pt
 *.pth
+
+# python caches
 __pycache__/
 *.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# notebooks & cache
+# notebooks
 .ipynb_checkpoints/
-*.tsv
-*.csv
+
+# logs
+*.log
+*.out
+*.err
+
+# results
+results/*
+!results/summary.csv
+!results/summary_de.csv
+!results/acc_bars.png
+!results/score_bars.png
 
 # envs
 .env
 .venv/
 venv/
 .env.*
+.python-version
 
 # os/editor junk
 .DS_Store
