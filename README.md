@@ -1,15 +1,25 @@
-# CIFAR-10 Machine Unlearning (Notebook)
+# CIFAR-10 Unlearning Scratchpad
 
-Tiny lab to explore **unlearning** by removing one class (airplane) from CIFAR-10.
+Tiny notebook that experiments with removing the **airplane** class from CIFAR-10.
 
-## Pipeline
-- **BASE**: train on retain classes {bird, cat, dog, truck}
-- **FULL**: train on retain + airplane (forget class)
-- **RETRAIN_BASE**: gold-standard “forgotten” model (retain only)
+## What it does 
 
-## We report:
-- Forget (airplane) accuracy
-- Retain (non-airplane) accuracy
-- Unlearning Score: closer to RETRAIN_BASE on forget & closer to FULL on retain (α=0.5)
+1. **Reference models**
+   * **BASE** : trained on 4 classes: bird, cat, dog, truck  
+   * **FULL** : same 4 classes **+ airplane**  
+   * **RETRAIN_BASE** : fresh run on the 4 classes (ideal “forgotten” model)
 
-(Checkpoints & raw metrics JSON are saved under `results/` but git-ignored.)
+2. **Unlearning variants** : start from **FULL** and apply:
+   * GAR (uniform-KL + CE)
+   * optional EWC diagonal penalty
+   * optional masked knowledge-distillation
+
+3. **Metrics**
+   * *Forget accuracy* : performance on airplane images
+   * *Retain accuracy* : performance on everything else
+   * *Unlearning score* : 1 if it matches RETRAIN_BASE on forget and FULL on retain, 0 if it fails both.
+
+## Disclaimer 
+
+This repo is a learning sandbox, not a polished reproduction of any paper.  
+Expect shortcuts, rough edges, and room for improvement :)
